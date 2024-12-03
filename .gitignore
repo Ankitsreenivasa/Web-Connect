@@ -3,3 +3,45 @@ server/.env
 server/.DS_Store
 server/npm-debug.log
 server/yarn-error.log
+server/.idea
+
+
+client-app/node_modules/
+client-app/.env
+
+
+
+# # dependencies
+# client-app/node_modules/
+
+# # Expo
+# .expo/
+# dist/
+# web-build/
+# expo-env.d.ts
+
+# # Native
+# *.orig.*
+# *.jks
+# *.p8
+# *.p12
+# *.key
+# *.mobileprovision
+
+# # Metro
+# .metro-health-check*
+
+# # debug
+# npm-debug.*
+# yarn-debug.*
+# yarn-error.*
+
+# # macOS
+# .DS_Store
+# *.pem
+
+# # local env files
+# .env*.local
+
+# # typescript
+# *.tsbuildinfo
