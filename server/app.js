@@ -1,6 +1,9 @@
 require("dotenv").config();
 require("express-async-errors");
 
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUI = require("swagger-ui-express");
+
 const EventEmitter = require("events");
 EventEmitter.defaultMaxListeners = 100;
 
@@ -12,9 +15,8 @@ const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 const authMiddleware = require("./middleware/authentication");
 
-// Routers
-const authRouter = require("./routes/auth");
-const rideRouter = require("./routes/ride");
+// Port
+const port = 3000;
 
 // Import socket handler
 const handleSocketConnection = require("./controllers/sockets");
@@ -25,6 +27,32 @@ app.use(express.json());
 const server = http.createServer(app);
 
 const io = socketIo(server, { cors: { origin: "*" } });
+
+// Routers
+const authRouter = require("./routes/auth");
+const rideRouter = require("./routes/ride");
+
+// Swagger
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Ride-Share API with Swagger UI",
+      version: "1.0.0",
+      description: "Ride-Share API with Swagger UI",
+    },
+    servers: [
+      {
+        url: `http://localhost:${port}`,
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
+};
+
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 // Attach the WebSocket instance to the request object
 app.use((req, res, next) => {
@@ -50,8 +78,8 @@ const start = async () => {
     // Uncomment this and comment below one if you want to run on ip address so that you can
     // access api in physical device
 
-    // server.listen(process.env.PORT || 3000, "0.0.0.0", () =>
-    server.listen(process.env.PORT || 3000, () =>
+    server.listen(process.env.PORT || 3000, "0.0.0.0", () =>
+      // server.listen(process.env.PORT || 3000, () =>
       console.log(
         `HTTP server is running on port http://localhost:${
           process.env.PORT || 3000
