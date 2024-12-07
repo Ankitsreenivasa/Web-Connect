@@ -6,19 +6,14 @@ server/yarn-error.log
 server/.idea
 
 
-client-app/node_modules/
-client-app/.env
+client/node_modules/
+client/.env
 
 
-
-# # dependencies
-# client-app/node_modules/
-
-# # Expo
-# .expo/
-# dist/
-# web-build/
-# expo-env.d.ts
+.expo/
+client/dist/
+client/web-build/
+client/expo-env.d.ts
 
 # # Native
 # *.orig.*
