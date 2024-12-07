@@ -16,7 +16,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 const authMiddleware = require("./middleware/authentication");
 
 // Port
-const port = 3000;
+const port = 8000;
 
 // Import socket handler
 const handleSocketConnection = require("./controllers/sockets");
@@ -75,14 +75,10 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
 
-    // Uncomment this and comment below one if you want to run on ip address so that you can
-    // access api in physical device
-
-    server.listen(process.env.PORT || 3000, "0.0.0.0", () =>
+    server.listen(process.env.PORT || 8000, "0.0.0.0", () =>
       // server.listen(process.env.PORT || 3000, () =>
       console.log(
-        `HTTP server is running on port http://localhost:${
-          process.env.PORT || 3000
+        `HTTP server is running on port http://localhost:${process.env.PORT || 8000
         }`
       )
     );
