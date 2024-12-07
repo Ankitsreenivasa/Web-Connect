@@ -9,8 +9,12 @@ server/.idea
 client/node_modules/
 client/.env
 
+client/app.json
+client/android
+client/%ProgramData%
+client/.idea
 
-.expo/
+client/.expo/
 client/dist/
 client/web-build/
 client/expo-env.d.ts
