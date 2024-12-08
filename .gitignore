@@ -1,3 +1,6 @@
+ngrok.exe
+server.rar
+
 server/node_modules
 server/.env
 server/.DS_Store
@@ -8,8 +11,8 @@ server/.idea
 
 client/node_modules/
 client/.env
-
 client/app.json
+
 client/android
 client/%ProgramData%
 client/.idea
