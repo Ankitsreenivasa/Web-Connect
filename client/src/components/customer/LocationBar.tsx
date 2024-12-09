@@ -23,7 +23,7 @@ const LocationBar = () => {
           onPress={() => logout(disconnect)}
         >
           <Ionicons
-            name="menu-outline"
+            name="log-out-outline"
             size={RFValue(18)}
             color={Colors.text}
           />

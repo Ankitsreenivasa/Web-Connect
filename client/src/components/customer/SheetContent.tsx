@@ -65,16 +65,16 @@ const SheetContent = () => {
 
       <View style={uiStyles.adSection}>
         <Image
-          source={require("@/assets/images/ad_banner.jpg")}
+          source={require("@/assets/images/add-background.jpg")}
           style={uiStyles.adImage}
         />
       </View>
-      <View style={uiStyles.bannerContainer}>
+      {/* <View style={uiStyles.bannerContainer}>
         <Image
           source={require("@/assets/icons/rapido.jpg")}
           style={uiStyles.banner}
         />
-      </View>
+      </View> */}
     </View>
   );
 };

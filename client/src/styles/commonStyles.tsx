@@ -16,6 +16,7 @@ export const commonStyles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    marginLeft: 10,
   },
   flexRowGap: {
     flexDirection: "row",
@@ -25,6 +26,7 @@ export const commonStyles = StyleSheet.create({
   flexRow: {
     flexDirection: "row",
     alignItems: "center",
+    marginRight: 10,
   },
   center: {
     alignItems: "center",

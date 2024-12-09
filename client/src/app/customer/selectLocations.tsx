@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  FlatList,
-  Image,
-} from "react-native";
+import { View, Text, TouchableOpacity, FlatList, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import { homeStyles } from "@/styles/homeStyles";
 import { StatusBar } from "expo-status-bar";
@@ -25,6 +18,7 @@ import {
 import LocationItem from "@/components/customer/LocationItem";
 import { locationStyles } from "@/styles/locationStyles";
 import MapPickerModal from "@/components/customer/MapPickerModal";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SelectLocations() {
   // ! STATES
@@ -126,8 +120,8 @@ export default function SelectLocations() {
   };
 
   return (
-    <View style={homeStyles.container}>
-      <StatusBar style="light" backgroundColor="orange" translucent={false} />
+    <SafeAreaView style={homeStyles.container}>
+      <StatusBar style="light" backgroundColor="black" translucent={false} />
       <SafeAreaView />
       <TouchableOpacity
         style={commonStyles.flexRow}
@@ -231,6 +225,6 @@ export default function SelectLocations() {
           }}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }

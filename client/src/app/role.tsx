@@ -3,6 +3,7 @@ import React from "react";
 import { roleStyles } from "@/styles/roleStyles";
 import CustomText from "@/components/shared/CustomText";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Role() {
   const handleCustomerPress = () => {
@@ -14,7 +15,7 @@ export default function Role() {
   };
 
   return (
-    <View style={roleStyles.container}>
+    <SafeAreaView style={roleStyles.container}>
       {/* <Image
         source={require("@/assets/images/logo_t.png")}
         style={roleStyles.logo}
@@ -38,7 +39,7 @@ export default function Role() {
 
       <TouchableOpacity style={roleStyles.card} onPress={handleCaptainPress}>
         <Image
-          source={require("@/assets/images/captain.png")}
+          source={require("@/assets/images/role_captain.png")}
           style={roleStyles.image}
         />
         <View style={roleStyles.cardContent}>
@@ -48,6 +49,6 @@ export default function Role() {
           </CustomText>
         </View>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }

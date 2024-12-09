@@ -10,6 +10,7 @@ import DraggableMap from "@/components/customer/DraggableMap";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import SheetContent from "@/components/customer/SheetContent";
 import { commonStyles } from "@/styles/commonStyles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const androidHeights = [screenHeight * 0.12, screenHeight * 0.42];
 
@@ -31,8 +32,8 @@ export default function Home() {
   }, []);
 
   return (
-    <View style={homeStyles.container}>
-      <StatusBar style="light" backgroundColor="orange" translucent={true} />
+    <SafeAreaView style={homeStyles.container}>
+      <StatusBar style="light" backgroundColor="black" translucent={false} />
       <LocationBar />
       <DraggableMap height={mapHeight} />
 
@@ -54,6 +55,6 @@ export default function Home() {
           <SheetContent />
         </BottomSheetScrollView>
       </BottomSheet>
-    </View>
+    </SafeAreaView>
   );
 }

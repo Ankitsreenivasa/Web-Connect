@@ -7,7 +7,7 @@ export const uiStyles = StyleSheet.create({
     zIndex: 1,
     position: "absolute",
     top: 0,
-    marginTop: 75,
+    marginTop: 10,
   },
   container: {
     flexDirection: "row",
@@ -65,6 +65,7 @@ export const uiStyles = StyleSheet.create({
     marginBottom: 20,
     padding: 10,
     backgroundColor: Colors.secondary_light,
+    marginHorizontal: 10,
   },
   cubeContainer: {
     width: "22.8%",
@@ -94,6 +95,7 @@ export const uiStyles = StyleSheet.create({
     marginVertical: 20,
     alignItems: "baseline",
     justifyContent: "space-between",
+    marginHorizontal: 10,
   },
   adImage: {
     height: "100%",

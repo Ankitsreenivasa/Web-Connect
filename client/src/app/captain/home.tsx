@@ -102,7 +102,7 @@ const Home = () => {
 
   return (
     <View style={homeStyles.container}>
-      <StatusBar style="light" backgroundColor="orange" translucent={false} />
+      <StatusBar style="light" backgroundColor="black" translucent={false} />
       <CaptainHeader />
 
       <FlatList

@@ -21,7 +21,7 @@ const SwipeableButton: FC<{
   );
 
   return (
-    <View style={rideStyles.swipeableContaniner}>
+    <View style={rideStyles.swipeableContainer}>
       <SwipeButton
         containerStyles={rideStyles.swipeButtonContainer}
         height={30}

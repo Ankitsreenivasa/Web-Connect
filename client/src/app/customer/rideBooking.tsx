@@ -21,6 +21,7 @@ const RideOption = React.memo(({ ride, selected, onSelect }: any) => (
       rideStyles.rideOption,
       { borderColor: selected === ride.type ? "#222" : "#ddd" },
     ]}
+    disabled={ride.type !== "Bike" ? true : false}
   >
     <View style={commonStyles.flexRowBetween}>
       <Image source={ride.icon} style={rideStyles.rideIcon} />
@@ -134,7 +135,7 @@ export default function RideBooking() {
 
   return (
     <View style={rideStyles.container}>
-      <StatusBar style="light" backgroundColor="orange" translucent={false} />
+      <StatusBar style="light" backgroundColor="black" translucent={false} />
       {item?.drop_latitude && location.latitude && (
         <RoutesMap
           drop={{
@@ -212,14 +213,14 @@ export default function RideBooking() {
             />
             <View>
               <CustomText fontFamily="Medium" fontSize={12}>
-                GORAPIDO
+                Coupons
               </CustomText>
               <CustomText
                 style={{ opacity: 0.7 }}
                 fontFamily="Medium"
                 fontSize={10}
               >
-                Coupon Applied
+                Coupons Applied
               </CustomText>
             </View>
             <Ionicons name="chevron-forward" size={RFValue(14)} color="#777" />

@@ -52,55 +52,58 @@ const DraggableMap: FC<{ height: number }> = ({ height }) => {
     })();
   }, [mapRef, isFocused]);
 
-  // useEffect(() => {
-  //     if (location?.latitude && location?.longitude && isFocused) {
-  //         emit("subscribeToZone", { latitude: location.latitude, longitude: location.longitude });
+  useEffect(() => {
+    if (location?.latitude && location?.longitude && isFocused) {
+      emit("subscribeToZone", {
+        latitude: location.latitude,
+        longitude: location.longitude,
+      });
 
-  //         on("nearbyCaptains", (captains: any[]) => {
-  //             const updatedMarkers = captains.map((captain) => ({
-  //                 id: captain.id,
-  //                 latitude: captain.coords.latitude,
-  //                 longitude: captain.coords.longitude,
-  //                 type: "captain",
-  //                 rotation: captain.coords.heading,
-  //                 visible: true,
-  //             }));
+      on("nearbyCaptains", (captains: any[]) => {
+        const updatedMarkers = captains.map((captain) => ({
+          id: captain.id,
+          latitude: captain.coords.latitude,
+          longitude: captain.coords.longitude,
+          type: "captain",
+          rotation: captain.coords.heading,
+          visible: true,
+        }));
 
-  //             setMarkers(updatedMarkers);
-  //         });
-  //     }
+        setMarkers(updatedMarkers);
+      });
+    }
 
-  //     return () => {
-  //         off("nearbyCaptains");
-  //     };
-  // }, [location, emit, on, off, isFocused]);
+    return () => {
+      off("nearbyCaptains");
+    };
+  }, [location, emit, on, off, isFocused]);
 
   // SIMULATING NEARBY CAPTAINS
 
-  useEffect(() => {
-    generateRandomMarkers();
-  }, [location]);
+  // useEffect(() => {
+  //   generateRandomMarkers();
+  // }, [location]);
 
-  const generateRandomMarkers = () => {
-    if (!location?.latitude || !location?.longitude || outOfRange) return;
+  // const generateRandomMarkers = () => {
+  //   if (!location?.latitude || !location?.longitude || outOfRange) return;
 
-    // const types = ["bike", "auto", "cab"];
-    const types = ["bike"];
-    const newMarkers = Array.from({ length: 20 }, (_, index) => {
-      const randomType = types[Math.floor(Math.random() * types.length)];
-      const randomRotation = Math.floor(Math.random() * 360);
+  //   // const types = ["bike", "auto", "cab"];
+  //   const types = ["bike"];
+  //   const newMarkers = Array.from({ length: 20 }, (_, index) => {
+  //     const randomType = types[Math.floor(Math.random() * types.length)];
+  //     const randomRotation = Math.floor(Math.random() * 360);
 
-      return {
-        id: index,
-        latitude: location?.latitude + (Math.random() - 0.5) * 0.01,
-        longitude: location?.longitude + (Math.random() - 0.5) * 0.01,
-        type: randomType,
-        rotation: randomRotation,
-        visible: true,
-      };
-    });
-    setMarkers(newMarkers);
-  };
+  //     return {
+  //       id: index,
+  //       latitude: location?.latitude + (Math.random() - 0.5) * 0.01,
+  //       longitude: location?.longitude + (Math.random() - 0.5) * 0.01,
+  //       type: randomType,
+  //       rotation: randomRotation,
+  //       visible: true,
+  //     };
+  //   });
+  //   setMarkers(newMarkers);
+  // };
 
   const handleRegionChangeComplete = async (newRegion: Region) => {
     const address = await reverseGeocode(

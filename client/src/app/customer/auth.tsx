@@ -15,11 +15,11 @@ import CustomText from "@/components/shared/CustomText";
 import PhoneInput from "@/components/shared/PhoneInput";
 import CustomButton from "@/components/shared/CustomButton";
 import { signin } from "@/service/authService";
-import {useWS} from "@/service/WSProvider";
+import { useWS } from "@/service/WSProvider";
 
 export default function Auth() {
   const [phone, setPhone] = useState("");
-  const {updateAccessToken} = useWS();
+  const { updateAccessToken } = useWS();
 
   const handleNext = async () => {
     console.log("login button clicked");
@@ -37,7 +37,7 @@ export default function Auth() {
       <ScrollView contentContainerStyle={authStyles.container}>
         <View style={commonStyles.flexRowBetween}>
           <Image
-            source={require("@/assets/images/logo_t.png")}
+            source={require("@/assets/images/role_icon.png")}
             style={authStyles.logo}
           />
           <TouchableOpacity style={authStyles.flexRowGap}>

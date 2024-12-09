@@ -18,8 +18,8 @@ export const signin = async (
   const { setUser: setCaptainUser } = useCaptainStore.getState();
 
   try {
-    console.log(`BASE URL is: ${BASE_URL}`)
-    console.log(payload)
+    console.log(`BASE URL is: ${BASE_URL}`);
+    console.log(payload);
     const res = await axios.post(`${BASE_URL}/auth/signin`, payload);
     if (res.data.user.role === "customer") {
       setUser(res.data.user);
