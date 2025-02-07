@@ -80,7 +80,7 @@ export default function Main() {
         style={splashStyles.img}
       />
       <CustomText variant="h5" fontFamily="Medium" style={splashStyles.text}>
-        Ride Share
+        Web Connect
       </CustomText>
     </View>
   );

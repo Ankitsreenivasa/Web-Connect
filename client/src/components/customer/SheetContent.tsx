@@ -69,12 +69,6 @@ const SheetContent = () => {
           style={uiStyles.adImage}
         />
       </View>
-      {/* <View style={uiStyles.bannerContainer}>
-        <Image
-          source={require("@/assets/icons/rapido.jpg")}
-          style={uiStyles.banner}
-        />
-      </View> */}
     </View>
   );
 };

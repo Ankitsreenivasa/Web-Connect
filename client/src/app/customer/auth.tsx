@@ -72,7 +72,8 @@ export default function Auth() {
             { textAlign: "center", marginHorizontal: 20 },
           ]}
         >
-          By continuing, you agree to the terms and privacy policy of Rapido
+          By continuing, you agree to the terms and privacy policy of Web
+          Connect!
         </CustomText>
         <CustomButton
           title="Next"
